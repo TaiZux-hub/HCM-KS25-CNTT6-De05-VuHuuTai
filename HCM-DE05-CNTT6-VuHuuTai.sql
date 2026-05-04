@@ -44,11 +44,11 @@ alter table teams
 change team_national team_region varchar (50);
 
 insert into teams (team_name,team_region,team_owner,founded) values
-	('Gam Esport', 'Asian', 'TK Nguyen', '2014'),
-    ('T1', 'Asia', 'SK Telecom', '2002'),
-    ('GEN G', 'Asia', null, '2017'),
-    ('Cloud 9', 'South America', 'Jack Etienne', '2013'),
-    ('G2 Esport', 'Europe', null, '2015');
+	('Gam Esport', 'Vietnam', 'TK Nguyen', '2014'),
+    ('T1', 'Korea', 'SK Telecom', '2002'),
+    ('GEN G', 'Korea', null, '2017'),
+    ('Cloud 9', 'America', 'Jack Etienne', '2013'),
+    ('G2 Esport', 'Germany', null, '2015');
     
 insert into players (player_name, player_nickname, player_role, player_salary, team_id) values
 ('Do Duy Khanh', 'Levi', 'Jungler', 120000000, 1),
@@ -89,12 +89,12 @@ select *
 from matchs
 where match_id = 'MS_007';
 
-select p.nickname, p.role
-from players p
-join teams t on p.team_id = t.team_id
-where t.region = 'Vietnam';
+select *
+from teams
+where team_region = 'Vietnam';
 
 drop table matchs;
 
-delete from teams
-where team_owner is null;
+-- delete from teams
+-- where team_owner is null;
+
